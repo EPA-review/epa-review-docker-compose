@@ -1,0 +1,7 @@
+## How to Use
+* Before make the service up, please make sure a SSL key called ```nginx.key``` and SSL cert called ```nginx.cert``` are in ./ssl/ directory. For dev environment, run ```sh get-self-signed-cert.sh``` can generate a self signed cert.
+* Please check ```env-configs/``` directory, which cantains multiple configurations for the docker compose. If needed, you can modify existing config files or add new ones.
+* By default, you should put the frontend project and the backend project to ```../```. However, you can put them somewhere else, just make sure to match their path inside the config file in ```env-configs/```.
+* To start the service, run ```docker-compose --env-file env-configs/prod.env up -d```, where you can replace ```env-configs/prod.env``` to the expected config file. After starting the service, try not to modify the config env file again before stop it.
+* To stop the service, run ```docker-compose --env-file env-configs/prod.env down```. Make sure you use the same env config file as you started the service.
+* To rebuild the service, run ```docker-compose --env-file env-configs/prod.env build```. When building, the service will not be stoped. After that, you can run ```docker-compose --env-file env-configs/prod.env restart``` to restart the service. Make sure you use the same env config file as you started the service.
