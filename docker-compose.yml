@@ -16,6 +16,14 @@ services:
         restart: unless-stopped
         depends_on:
             - db
+            - analyzer
+            - anonymizer
+    analyzer:
+        image: mcr.microsoft.com/presidio-analyzer
+        restart: unless-stopped
+    anonymizer:
+        image: mcr.microsoft.com/presidio-anonymizer
+        restart: unless-stopped
     db:
         image: mongo
         restart: unless-stopped
