@@ -19,7 +19,7 @@ services:
             - analyzer
             - anonymizer
     analyzer:
-        image: mcr.microsoft.com/presidio-analyzer
+        image: ${ANALYZER_PROJECT_PATH}
         restart: unless-stopped
     anonymizer:
         image: mcr.microsoft.com/presidio-anonymizer
