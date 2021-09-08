@@ -17,12 +17,8 @@ services:
         depends_on:
             - db
             - analyzer
-            - anonymizer
     analyzer:
-        image: ${ANALYZER_PROJECT_PATH}
-        restart: unless-stopped
-    anonymizer:
-        image: mcr.microsoft.com/presidio-anonymizer
+        build: ${ANALYZER_PROJECT_PATH}
         restart: unless-stopped
     db:
         image: mongo
