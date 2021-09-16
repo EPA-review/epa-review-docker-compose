@@ -5,10 +5,10 @@ services:
         restart: unless-stopped
         ports:
             - ${HTTP_PORT}:80
-            - ${HTTPS_PORT}:443
+            # - ${HTTPS_PORT}:443
         volumes:
             - ./nginx.conf:/etc/nginx/nginx.conf
-            - ./ssl/:/ssl/
+            # - ./ssl/:/ssl/
         depends_on:
             - backend
     backend:
