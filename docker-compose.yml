@@ -17,9 +17,9 @@ services:
         depends_on:
             - db
             - analyzer
-    analyzer:
-        build: ${ANALYZER_PROJECT_PATH}
-        restart: unless-stopped
+    # analyzer:
+    #     build: ${ANALYZER_PROJECT_PATH}
+    #     restart: unless-stopped
     db:
         image: mongo
         restart: unless-stopped
