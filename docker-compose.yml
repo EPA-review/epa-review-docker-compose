@@ -16,7 +16,7 @@ services:
         restart: unless-stopped
         depends_on:
             - db
-            - analyzer
+            # - analyzer
     # analyzer:
     #     build: ${ANALYZER_PROJECT_PATH}
     #     restart: unless-stopped
